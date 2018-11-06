@@ -1,12 +1,13 @@
-Harjoitustyöotsikko1
+
 
 *Tämän harjoitustyön sisältöä* 
 
-## Harjoitustyöotsikko 2
+## Ojelmistotekniikka 2018 
+##### Harjoitustyö
 
-**Mistä tässä on kysymys?**
+**Viikko 1**
  
-##### Harjoitustyöotsikko 5
 
-[e ~https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt~]
+
+[https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt]
 [github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt]
