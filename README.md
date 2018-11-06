@@ -8,4 +8,5 @@ Harjoitustyöotsikko1
  
 ##### Harjoitustyöotsikko 5
 
-[https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt]
+[e ~https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt~]
+[github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt]
