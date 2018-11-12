@@ -1,11 +1,9 @@
 
 
-*Tämän harjoitustyön sisältöä* 
-
-## Ojelmistotekniikka 2018  
+## Ohjelmistotekniikka 2018  
 #### Harjoitustyö
 
-**Viikko 1**
+
  
 
 
