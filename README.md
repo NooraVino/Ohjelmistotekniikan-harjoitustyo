@@ -14,4 +14,4 @@
 
 [Määrittelydokumentti](https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/M%C3%A4%C3%A4rittelydokumentti.md)
 
-[Työaikakirjanpito] (https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/Ty%C3%B6aikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/Ty%C3%B6aikakirjanpito.md)
