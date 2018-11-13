@@ -11,9 +11,21 @@ alkuajatuksena on että kaikki käyttäjät ovat saman arvoisia. Ei siis eriksee
    * luoda käyttäjätunnuksen
    * kirjautua palveluun
    * lisätä oman toiveen
-   * poistaa oman toiveen
+   * poistaa oman toiveen?
    * lisata lisätietoja
    * nähdä muiden toiveet ja käydä niihin liittyvää keskustelua 
+   
+   
+#### Toiminnallisuus
+
+##### Ennen kirjautumista
+* pitää luoda käyttäjätunnus
+* voi kirjautua / jos ei ole tunnusta niin järjästelmä ilmoitta siitä
+
+##### Kirjautumisen jälkeen
+* voi lisätä toiveen ( + lisätiedot)
+* voi tarkastella muiden käyttäjien toiveita
+* voi ilmaista kiinnostuksensa osallistua jonkin lahjan hankintaan
    
 ### Laajennusajatukset 
 Riippuen siitä, miten laajan työstä ehtii tekemään, siihen voisi lisätä, että toiveita voi esittää yhdessä toisten kanssa ja että lahjan hankkijat voivat muodostaa porukoita joiden kesken suunnitella lahjan hankintaa. 
