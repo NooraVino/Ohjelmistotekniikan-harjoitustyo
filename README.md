@@ -1,7 +1,7 @@
 
 
 ## Ohjelmistotekniikka 2018  
-#### Harjoitusty
+#### Harjoitustyö
 
 
 
