@@ -1,13 +1,9 @@
 
 
 ## Ohjelmistotekniikka 2018  
-#### Harjoitustyö
+### Harjoitustyö: GiftWish-sovellus
 
-
-
-[gitlog.txt](https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/NooraVino/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+## Dokumentaatio
 
 [määrittelydokumentti](https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/M%C3%A4%C3%A4rittelydokumentti.md)
 
