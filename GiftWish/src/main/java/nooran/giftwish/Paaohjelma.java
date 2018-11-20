@@ -5,6 +5,8 @@
  */
 package nooran.giftwish;
 
+import nooran.giftwish.domain.User;
+
 /**
  *
  * @author vino
@@ -15,7 +17,8 @@ public class Paaohjelma {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("nfifj");
+        User luokka = new User();
+        
     }
     
 }
