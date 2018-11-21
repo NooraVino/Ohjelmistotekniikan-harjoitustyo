@@ -18,6 +18,7 @@ public class Paaohjelma {
      */
     public static void main(String[] args) {
         User luokka = new User();
+        System.out.println("böö");
         
     }
     
