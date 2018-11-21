@@ -13,8 +13,8 @@ public class Gift {
     private String name;
     private String content;
     
-    public Gift() {
-        this.name = "";
+    public Gift(String name) {
+        this.name = name;
         this.content = "";
     }
     
