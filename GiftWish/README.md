@@ -7,6 +7,6 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 ## Dokumentaatio
 
-[määrittelydokumentti](https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/M%C3%A4%C3%A4rittelydokumentti.md)
+[määrittelydokumentti](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/M%C3%A4%C3%A4rittelydokumentti.md)
 
 [työaikakirjanpito](https://github.com/NooraVino/ot-harjoitustyo/blob/master/Dokumentointi/Ty%C3%B6aikakirjanpito.md)
