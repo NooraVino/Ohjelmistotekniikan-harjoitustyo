@@ -11,4 +11,4 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 [työaikakirjanpito](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/Ty%C3%B6aikakirjanpito.md)
 
-[arkkitehtuuri](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/Arkkitehtuuri.md)
+[arkkitehtuuri](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/pakkauskaavio.jpg)
