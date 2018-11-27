@@ -5,3 +5,7 @@ Päivä  |Aika |Mitä tein
 15.11 | 2 | Projektikansioiden luomista.
 17.11 | 3 | Sovelluksen rakenteen hahmottelemista.
 20.11 | 3 | User ja gift luokan aloitus ja viikkopalautus
+22.11 | 3 | Userin luomista.
+24.11 | 2 | Käyttöliittymän teon opettelua.
+25.11 | 3 | Tiedon tallentamisen opettelua.
+27.11 | 3 | Testien luonti.
