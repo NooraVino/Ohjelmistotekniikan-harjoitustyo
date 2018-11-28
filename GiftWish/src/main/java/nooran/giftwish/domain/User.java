@@ -5,8 +5,6 @@
  */
 package nooran.giftwish.domain;
 
-
-
 /**
  *
  * @author vino
@@ -14,22 +12,19 @@ package nooran.giftwish.domain;
 public class User {
     private String userName;
     private String passWord;
-  
 
     public User(String username, String password) {
         this.userName = username;
         this.passWord = password;
-      
 
     }
-     public String getUserName() {  
+    public String getUserName() {
         return this.userName;
     }
-     
+
     public String getPassword() {
         return this.passWord;
-    }     
-
+    }
 
 //    public void setUserName(String name) {
 //        this.userName = name;
@@ -40,13 +35,12 @@ public class User {
 //    }
 //
 //  
-
-@Override
+    @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof User)) {
             return false;
         }
-        
+
         User other = (User) obj;
         return this.userName.equals(other.userName);
     }

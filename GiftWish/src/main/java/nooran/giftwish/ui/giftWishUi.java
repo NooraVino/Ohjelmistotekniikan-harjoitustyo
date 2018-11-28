@@ -59,15 +59,14 @@ public class giftWishUi extends Application {
         HBox inputPane = new HBox(10);
         loginPane.setPadding(new Insets(10));
         Label loginLabel = new Label("Kayttaja");
-        Label loginLabel2 = new Label("Kayttaja");
         TextField usernameInput = new TextField();
-        TextField usernameInput2 = new TextField();
         
-        inputPane.getChildren().addAll(loginLabel, loginLabel2, usernameInput, usernameInput2);
+        
+        inputPane.getChildren().addAll(loginLabel, usernameInput);
         Label loginMessage = new Label("Kirjaudu sisään");
         
-        Button loginButton = new Button("login");
-        Button createButton = new Button("create new user");
+        Button loginButton = new Button("Kirjaudu sisään");
+        Button createButton = new Button("Luo uusi käyttäjä");
         loginButton.setOnAction(e->{
             String username = usernameInput.getText();
         menuLabel.setText(username + " logged in...");
@@ -119,14 +118,14 @@ public class giftWishUi extends Application {
 
         createNewUserButton.setOnAction(e->{
             String username = newUsernameInput.getText();
-            String name = newNameInput.getText();
+            String password = newNameInput.getText();
    
-            if ( username.length()==2 || name.length()<2 ) {
-                userCreationMessage.setText("username or name too short");
+            if ( username.length()<= 3 || password.length()<=3 ) {
+                userCreationMessage.setText("Käyttäjätunnus tai salasana liian lyhyitä");
                 userCreationMessage.setTextFill(Color.RED);  
-             } else if (makeWishes.createUser(username, name) ){
+             } else if (makeWishes.createUser(username, password) ){
                 userCreationMessage.setText("");                
-                loginMessage.setText("new user created");
+                loginMessage.setText("Uusi käyttäjä luotu käyttäjänimellä:  " + username);
                 loginMessage.setTextFill(Color.GREEN);
                 primaryStage.setScene(loginScene);    
                 

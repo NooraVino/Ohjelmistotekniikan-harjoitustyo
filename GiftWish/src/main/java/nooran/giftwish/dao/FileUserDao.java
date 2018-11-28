@@ -17,12 +17,12 @@ import nooran.giftwish.domain.User;
  *
  * @author vino
  */
-public class FileUserDao implements UserDao{
+public class FileUserDao implements UserDao {
     private List<User> users;
     private String file;
-    
+
     public FileUserDao(String file) throws IOException {
-           users = new ArrayList<>();
+        this.users = new ArrayList<>();
         this.file = file;
         try {
             Scanner reader = new Scanner(new File(file));
@@ -35,36 +35,35 @@ public class FileUserDao implements UserDao{
             FileWriter writer = new FileWriter(new File(file));
             writer.close();
         }
-        
+
     }
-    private void save() throws Exception{
+    private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
                 writer.write(user.getUserName() + ";" + user.getPassword() + "\n");
             }
-        } 
+        }
     }
 
-     @Override
+    @Override
     public List<User> getAll() {
         return users;
     }
-     @Override
+
+    @Override
     public User findByUsername(String username) {
         return users.stream()
-            .filter(u->u.getUserName()
-            .equals(username))
-            .findFirst()
-            .orElse(null);
+                .filter(u -> u.getUserName()
+                .equals(username))
+                .findFirst()
+                .orElse(null);
     }
-    
+
     @Override
     public User create(User user) throws Exception {
         users.add(user);
         save();
         return user;
-    }    
-
-
+    }
 
 }
