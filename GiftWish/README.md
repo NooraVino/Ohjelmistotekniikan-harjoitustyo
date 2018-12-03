@@ -24,6 +24,8 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 ### Checkstyle
 Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
 
-' mvn jxr:jxr checkstyle:checkstyle '
+```mvn jxr:jxr checkstyle:checkstyle
+```
+
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
