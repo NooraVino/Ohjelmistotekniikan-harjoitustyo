@@ -14,8 +14,12 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -30,9 +34,10 @@ import nooran.giftwish.domain.User;
  * @author vino
  */
 public class giftWishUi extends Application {
-     private Scene newUserScene;
+    private Scene newUserScene;
     private Scene loginScene;
-    private Scene todoScene;
+    private Scene GiftScene;
+    private VBox GiftNodes ;
     
     private MakeWishes makeWishes;
     private Label menuLabel = new Label();
@@ -53,7 +58,7 @@ public class giftWishUi extends Application {
 
   @Override
     public void start(Stage primaryStage) {            
-        // login scene
+        // kirjautumissivu
         
         VBox loginPane = new VBox(10);
         HBox inputPane = new HBox(10);
@@ -73,7 +78,7 @@ public class giftWishUi extends Application {
             if ( makeWishes.login(username) ){
                 loginMessage.setText("");
                 //redrawTodolist();
-                primaryStage.setScene(todoScene);  
+                primaryStage.setScene(GiftScene);  
                 usernameInput.setText("");
             } else {
                 loginMessage.setText("use does not exist");
@@ -93,7 +98,7 @@ public class giftWishUi extends Application {
         loginScene = new Scene(loginPane, 300, 250);    
         
         
-        // new createNewUserScene
+        // luo uusi käyttäjä-sivu
         
         VBox newUserPane = new VBox(10);
         
@@ -145,11 +150,55 @@ public class giftWishUi extends Application {
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{
             System.out.println("closing");
-           // System.out.println(todoService.getLoggedUser());
+           // System.out.println(makeWishes.getLoggedUser());
+           // if (todoService.getLoggedUser()!=null) {
+           //     e.consume();   
+          //  }
           
            
     });
-                }
+                
+ 
+            
+        // pääsivu
+        
+        ScrollPane todoScollbar = new ScrollPane();       
+        BorderPane mainPane = new BorderPane(todoScollbar);
+        GiftScene = new Scene(mainPane, 300, 250);
+                
+        HBox menuPane = new HBox(10);    
+        Region menuSpacer = new Region();
+        HBox.setHgrow(menuSpacer, Priority.ALWAYS);
+        Button logoutButton = new Button("logout");      
+        menuPane.getChildren().addAll(menuLabel, menuSpacer, logoutButton);
+        logoutButton.setOnAction(e->{
+            makeWishes.logout();
+            primaryStage.setScene(loginScene);
+        });        
+        
+        HBox createForm = new HBox(10);    
+        Button createTodo = new Button("create");
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        TextField newTodoInput = new TextField();
+        createForm.getChildren().addAll(newTodoInput, spacer, createTodo);
+        
+        GiftNodes = new VBox(10);
+        GiftNodes.setMaxWidth(280);
+        GiftNodes.setMinWidth(280);
+        //redrawTodolist();
+        
+        todoScollbar.setContent(GiftNodes);
+        mainPane.setBottom(createForm);
+        mainPane.setTop(menuPane);
+        
+        createTodo.setOnAction(e->{
+            makeWishes.makeNewWish(newTodoInput.getText());
+            newTodoInput.setText("");       
+           // redrawTodolist();
+        });
+    }
+    
     public static void main(String[] args) {
         launch(giftWishUi.class);
     }

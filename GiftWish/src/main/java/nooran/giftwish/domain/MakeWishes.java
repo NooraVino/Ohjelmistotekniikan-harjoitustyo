@@ -12,7 +12,7 @@ import nooran.giftwish.dao.UserDao;
  * @author vino
  */
 public class MakeWishes {
-
+    private User loggedIn;
     private UserDao userdao;
 
     public MakeWishes(UserDao userdao) {
@@ -30,10 +30,14 @@ public class MakeWishes {
         if (user == null) {
             return false;
         }
-
-        //loggedIn = user;
+        loggedIn = user;
         return true;
     }
+    
+    public void logout() {
+        loggedIn = null;  
+    }
+    
 
     public boolean createUser(String username, String password) {
         if (this.userdao.findByUsername(username) != null) {
