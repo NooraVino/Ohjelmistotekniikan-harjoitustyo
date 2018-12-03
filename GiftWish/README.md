@@ -19,14 +19,28 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 ## Komentorivitoiminnot
 
 ### Testaus
+Testit suoritetaan komennolla
+```
+mvn test
+```
+Testikattavuusraportti luodaan komennolla:
+```
+mvn jacoco:report
+```
+
 ### Suoritettavan jarin generointi
+Komento:
+```
+mvn package
+```
+generoi hakemistoon target suoritettavan jar-tiedoston: 
 ### JavaDoc
+
 ### Checkstyle
-Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla
 
 ```
 mvn jxr:jxr checkstyle:checkstyle
-
 ```
 
 
