@@ -1,6 +1,6 @@
 
 
-## Ohjelmistotekniikka 2018  
+# Ohjelmistotekniikka 2018  
 ## Harjoitustyö: GiftWish-sovellus
 
 Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahjatoiveet ja jossa kaikki voivat yhteisesti suunnitella kuka hankkii kenelle ja mitä lahjaksi. Jokainen voi kirjata omat toiveensa ja kaikki muut käyttäjät voivat kommentoida ja ideoida lahjanhankintaa yksittäisen kyseisen käyttäjännäkemättä.
@@ -13,6 +13,17 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 [arkkitehtuuri](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/pakkauskaavio.jpg)
 
+
 ## Releaset
 
-## 
+## Komentorivitoiminnot
+
+### Testaus
+### Suoritettavan jarin generointi
+### JavaDoc
+### Checkstyle
+Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla
+
+' mvn jxr:jxr checkstyle:checkstyle '
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
