@@ -9,3 +9,8 @@ Päivä  |Aika |Mitä tein
 24.11 | 2 | Käyttöliittymän teon opettelua.
 25.11 | 3 | Tiedon tallentamisen opettelua.
 27.11 | 3 | Testien luonti.
+29.11 | 3 | Checkstyle, Testien jatkoa.
+3.12  | 2 | Jar-juttuja.
+4.12  | 4 | Palautuksen valmistelu, Release, Sekvenssikavio.
+
+Summa 32
