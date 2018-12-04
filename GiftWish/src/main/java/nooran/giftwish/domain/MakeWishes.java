@@ -9,9 +9,10 @@ import nooran.giftwish.dao.UserDao;
 
 /**
  *
- * @author vino
+ * Sovelluslogiikasta vastaava luokka
  */
 public class MakeWishes {
+
     private User loggedIn;
     private UserDao userdao;
 
@@ -20,8 +21,8 @@ public class MakeWishes {
 
     }
 
-    public boolean makeNewWish(String name) {
-        Gift gift = new Gift(name);
+    public boolean makeNewWish(String name, String content) {
+        Gift gift = new Gift(name, content, loggedIn);
         return true;
     }
 
@@ -33,11 +34,10 @@ public class MakeWishes {
         loggedIn = user;
         return true;
     }
-    
+
     public void logout() {
-        loggedIn = null;  
+        loggedIn = null;
     }
-    
 
     public boolean createUser(String username, String password) {
         if (this.userdao.findByUsername(username) != null) {

@@ -180,8 +180,9 @@ public class giftWishUi extends Application {
         Button createTodo = new Button("create");
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
-        TextField newTodoInput = new TextField();
-        createForm.getChildren().addAll(newTodoInput, spacer, createTodo);
+        TextField newGiftInput = new TextField();
+        TextField newContentInput = new TextField();
+        createForm.getChildren().addAll(newGiftInput, newContentInput, spacer, createTodo);
         
         GiftNodes = new VBox(10);
         GiftNodes.setMaxWidth(280);
@@ -193,8 +194,9 @@ public class giftWishUi extends Application {
         mainPane.setTop(menuPane);
         
         createTodo.setOnAction(e->{
-            makeWishes.makeNewWish(newTodoInput.getText());
-            newTodoInput.setText("");       
+            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
+            newGiftInput.setText(""); 
+            newContentInput.setText("");
            // redrawTodolist();
         });
     }
