@@ -16,6 +16,8 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 ## Releaset
 
+[Viikko 5](https://github.com/NooraVino/ot-harjoitustyo/releases)
+
 ## Komentorivitoiminnot
 
 ### Testaus
@@ -27,6 +29,7 @@ Testikattavuusraportti luodaan komennolla:
 ```
 mvn jacoco:report
 ```
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
 
 ### Suoritettavan jarin generointi
 Komento:
@@ -42,6 +45,4 @@ Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-
-
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto target/site/checkstyle.html
