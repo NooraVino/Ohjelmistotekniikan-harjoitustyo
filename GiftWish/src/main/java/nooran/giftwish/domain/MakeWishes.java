@@ -39,6 +39,10 @@ public class MakeWishes {
         loggedIn = null;
     }
 
+    public User getLoggedUser() {
+        return loggedIn;
+    }
+
     public boolean createUser(String username, String password) {
         if (this.userdao.findByUsername(username) != null) {
             return false;

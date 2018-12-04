@@ -10,6 +10,7 @@ package nooran.giftwish.domain;
  * @author vino
  */
 public class User {
+
     private String userName;
     private String passWord;
 
@@ -18,6 +19,7 @@ public class User {
         this.passWord = password;
 
     }
+
     public String getUserName() {
         return this.userName;
     }
@@ -26,15 +28,6 @@ public class User {
         return this.passWord;
     }
 
-//    public void setUserName(String name) {
-//        this.userName = name;
-//    }
-//
-//    public void setPassWord(String passWord) {
-//        this.passWord = passWord;
-//    }
-//
-//  
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof User)) {
