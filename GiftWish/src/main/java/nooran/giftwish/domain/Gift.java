@@ -55,7 +55,7 @@ public class Gift {
         this.content = content;
     }
 
-    public String getName(String name) {
+    public String getName() {
         return this.name;
     }
 

@@ -6,11 +6,13 @@
 package nooran.giftwish.ui;
 
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Properties;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,6 +28,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import nooran.giftwish.dao.FileGiftDao;
 import nooran.giftwish.dao.FileUserDao;
+import nooran.giftwish.domain.Gift;
 import nooran.giftwish.domain.MakeWishes;
 import nooran.giftwish.domain.User;
 
@@ -52,9 +55,37 @@ public class giftWishUi extends Application {
         String giftFile = properties.getProperty("giftFile");
             
         FileUserDao userDao = new FileUserDao(userFile);
-        FileGiftDao giftDao = new FileGiftDao();
-        makeWishes = new MakeWishes(userDao);
+        FileGiftDao giftDao = new FileGiftDao(giftFile, userDao);
+        makeWishes = new MakeWishes(userDao, giftDao);
     }
+    
+    public Node createGiftNode(Gift gift) {
+        HBox box = new HBox(10);
+        Label label  = new Label(gift.getContent());
+        label.setMinHeight(28);
+        Button button = new Button("done");
+        button.setOnAction(e->{
+            makeWishes.markDone(gift.getId());
+            redrawGiftlist();
+        });
+                
+        Region spacer = new Region();
+        HBox.setHgrow(spacer, Priority.ALWAYS);
+        box.setPadding(new Insets(0,5,0,5));
+        
+        box.getChildren().addAll(label, spacer, button);
+        return box;
+    }
+    
+    public void redrawGiftlist() {
+        GiftNodes.getChildren().clear();     
+
+        List<Gift> undoneGifts = makeWishes.getUndone();
+        undoneGifts.forEach(gift->{
+            GiftNodes.getChildren().add(createGiftNode(gift));
+        });     
+    }
+    
 
   @Override
     public void start(Stage primaryStage) {            
@@ -77,7 +108,7 @@ public class giftWishUi extends Application {
         menuLabel.setText(username + " logged in...");
             if ( makeWishes.login(username) ){
                 loginMessage.setText("");
-                //redrawTodolist();
+                redrawGiftlist();
                 primaryStage.setScene(GiftScene);  
                 usernameInput.setText("");
             } else {
@@ -150,10 +181,11 @@ public class giftWishUi extends Application {
         primaryStage.show();
         primaryStage.setOnCloseRequest(e->{
             System.out.println("closing");
-           // System.out.println(makeWishes.getLoggedUser());
-           // if (todoService.getLoggedUser()!=null) {
-           //     e.consume();   
-          //  }
+            System.out.println(makeWishes.getLoggedUser());
+            menuLabel.setText("Kirjaudu ulos ennen kuin suljet sovelluksen");
+            if (makeWishes.getLoggedUser()!=null) {
+                e.consume();   
+            }
           
            
     });
@@ -187,7 +219,7 @@ public class giftWishUi extends Application {
         GiftNodes = new VBox(10);
         GiftNodes.setMaxWidth(280);
         GiftNodes.setMinWidth(280);
-        //redrawTodolist();
+        redrawGiftlist();
         
         todoScollbar.setContent(GiftNodes);
         mainPane.setBottom(createForm);
@@ -197,9 +229,15 @@ public class giftWishUi extends Application {
             makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
             newGiftInput.setText(""); 
             newContentInput.setText("");
-           // redrawTodolist();
+           redrawGiftlist();
         });
     }
+    
+    @Override
+    public void stop() {
+      // tee lopetustoimenpiteet täällä
+      System.out.println("sovellus sulkeutuu");
+    }   
     
     public static void main(String[] args) {
         launch(giftWishUi.class);

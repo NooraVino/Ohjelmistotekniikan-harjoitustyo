@@ -5,6 +5,10 @@
  */
 package nooran.giftwish.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import nooran.giftwish.dao.GiftDao;
 import nooran.giftwish.dao.UserDao;
 
 /**
@@ -15,15 +19,43 @@ public class MakeWishes {
 
     private User loggedIn;
     private UserDao userdao;
+    private GiftDao giftdao;
 
-    public MakeWishes(UserDao userdao) {
+    public MakeWishes(UserDao userdao, GiftDao giftdao) {
         this.userdao = userdao;
+        this.giftdao = giftdao;
 
     }
 
     public boolean makeNewWish(String name, String content) {
         Gift gift = new Gift(name, content, loggedIn);
+        try {   
+           giftdao.create(gift);
+        } catch (Exception ex) {
+            return false;
+        }
         return true;
+        
+ 
+    }
+    
+    public void markDone(int id) {
+        try {
+            giftdao.setDone(id);
+        } catch (Exception ex) {
+        }
+    }
+    
+     public List<Gift> getUndone() {
+        if (loggedIn == null) {
+            return new ArrayList<>();
+        }
+          
+        return giftdao.getAll()
+            .stream()
+            .filter(t-> t.getUser().equals(loggedIn))
+            .filter(t->!t.isDone())
+            .collect(Collectors.toList());
     }
 
     public boolean login(String username) {

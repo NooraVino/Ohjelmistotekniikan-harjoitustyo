@@ -16,18 +16,19 @@ import static org.junit.Assert.*;
  *
  */
 public class MakeWishUserTest {
-
+    FakeGiftDao giftDao;
     FakeUserDao userDao;
     MakeWishes makeWish;
 
     @Before
     public void setUp() {
+        giftDao = new FakeGiftDao();
         userDao = new FakeUserDao();
         User user1 = new User("Noora", "salasana");
         User user2 = new User("Ville", "password");
         userDao.create(user1);
         userDao.create(user2);
-        makeWish = new MakeWishes(userDao);
+        makeWish = new MakeWishes(userDao, giftDao);
         makeWish.login("testaaja1");
     }
 
