@@ -1,1 +1,7 @@
-1;lahja;kassi;false;Noora
+1;lahja;kassi;true;Noora
+2;lahja;lahja;true;Ville
+3;lahja;;false;Noora
+4;jaahas;jaa;true;Meeri
+5;moi;moi;false;Elvi
+6;aasi ;aasi;false;Ville
+7;kirahvi;kirahsvi;false;Ville

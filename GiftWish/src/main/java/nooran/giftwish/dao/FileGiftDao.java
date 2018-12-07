@@ -14,7 +14,6 @@ import nooran.giftwish.domain.User;
  * @author vino
  */
 public class FileGiftDao implements GiftDao {
-
     private List<Gift> gifts;
     private String file;
 
@@ -26,7 +25,7 @@ public class FileGiftDao implements GiftDao {
             while (reader.hasNextLine()) {
                 String[] parts = reader.nextLine().split(";");
                 int id = Integer.parseInt(parts[0]);
-                boolean done = Boolean.parseBoolean(parts[2]);
+                boolean done = Boolean.parseBoolean(parts[3]);
                 User user = users.getAll().stream().filter(u -> u.getUserName().equals(parts[4])).findFirst().orElse(null);
                 Gift gift = new Gift(id, parts[1], parts[2], done, user);
                 gifts.add(gift);

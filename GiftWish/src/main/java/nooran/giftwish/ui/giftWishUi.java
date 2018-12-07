@@ -44,6 +44,7 @@ public class giftWishUi extends Application {
     
     private MakeWishes makeWishes;
     private Label menuLabel = new Label();
+    private BorderPane asettelu = new BorderPane();
     
 @Override
     public void init() throws Exception {
@@ -126,7 +127,7 @@ public class giftWishUi extends Application {
         
         loginPane.getChildren().addAll(loginMessage, inputPane, loginButton, createButton);       
         
-        loginScene = new Scene(loginPane, 300, 250);    
+        loginScene = new Scene(loginPane, 500, 550);    
         
         
         // luo uusi käyttäjä-sivu
