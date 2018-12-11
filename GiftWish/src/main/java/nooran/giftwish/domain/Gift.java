@@ -1,17 +1,17 @@
-
 package nooran.giftwish.domain;
 
 /**
  *
- * Lahjatoivetta kuvaava luokka.
+ * Yksittäistä lahjatoivetta kuvaava luokka.
  */
 public class Gift {
+
     private int id;
     private String name;
     private String content;
     private boolean done;
     private User user;
-    
+
     public Gift(int id, String name, String content, boolean done, User user) {
         this.id = id;
         this.name = name;
@@ -19,22 +19,22 @@ public class Gift {
         this.done = done;
         this.user = user;
     }
-    
+
     public Gift(String name, String content, User user) {
         this.name = name;
         this.content = content;
         this.done = false;
-        this.user = user;   
+        this.user = user;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public void setDone() {
         this.done = true;
     }
-    
+
     public String getContent() {
         return this.content;
     }
@@ -62,7 +62,7 @@ public class Gift {
     public String getContent(String content) {
         return this.content;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Gift)) {
@@ -72,5 +72,4 @@ public class Gift {
         return id == other.id;
     }
 
-    
 }

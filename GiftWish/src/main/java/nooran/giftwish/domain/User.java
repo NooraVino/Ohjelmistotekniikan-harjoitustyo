@@ -7,7 +7,7 @@ package nooran.giftwish.domain;
 
 /**
  *
- * @author vino
+ * Yksittäistä käyttäjää kuvaava luokka.
  */
 public class User {
 

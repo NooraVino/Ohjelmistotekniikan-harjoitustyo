@@ -10,7 +10,7 @@ import nooran.giftwish.domain.Gift;
 
 /**
  *
- * @author vino
+ * Lahjatoiveiden tallentamisesta vastaava rajapintaluokka
  */
 public interface GiftDao {
     Gift create(Gift gift) throws Exception;

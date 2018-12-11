@@ -6,7 +6,7 @@ import nooran.giftwish.domain.User;
 
 /**
  *
- * @author vino
+ * Käyttäjien tietojen tallentamisesta vastaava rajapintaluokka
  */
 public interface UserDao {
 
