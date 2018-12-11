@@ -5,3 +5,5 @@
 5;moi;moi;false;Elvi
 6;aasi ;aasi;false;Ville
 7;kirahvi;kirahsvi;false;Ville
+8;kengät;ruskeat ja nahkaiset;false;Noora
+9;tuulipuku;nro 52;true;Äijä
