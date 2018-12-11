@@ -1,3 +1,3 @@
 # kuva
 
-[pakkauskaavio.jpg] (https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/pakkauskaavio.jpg)
+![alt text] (https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/pakkauskaavio.jpg)
