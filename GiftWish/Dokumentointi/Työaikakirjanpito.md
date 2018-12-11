@@ -12,5 +12,8 @@ Päivä  |Aika |Mitä tein
 29.11 | 3 | Checkstyle, Testien jatkoa.
 3.12  | 2 | Jar-juttuja.
 4.12  | 4 | Palautuksen valmistelu, Release, Sekvenssikavio.
+9.12  | 2 | JavaFX käytön opettelu
+10.12 | 3 | JavaFX käytön opettelu
+11.12 | 3 | Arkkitetuurikuvauksen luomista.
 
-Summa 32
+Summa 40
