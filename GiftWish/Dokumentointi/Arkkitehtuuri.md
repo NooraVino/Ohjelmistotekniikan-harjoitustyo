@@ -13,10 +13,10 @@ Pakkaus nooran.giftwish.dao sisältää tietojen tallennuksesta vastaavan koodin
 ## Käyttöliittymä
 
 Ohjelman käyttöliittymä sisältää neljä erillistä näkymää:
-. sisäänkirjautuminen
-. uuden käyttäjän luominen
-. toiveen kirjaaminen/muokkaaminen
-. toisten käyttäjien toiveiden näkeminen
+..* sisäänkirjautuminen
+..* uuden käyttäjän luominen
+..* toiveen kirjaaminen/muokkaaminen
+..* toisten käyttäjien toiveiden näkeminen
 
 Näkymät toteutetaan Scene-olioina.
 
@@ -32,13 +32,17 @@ Sovelluksen logiikka koostuu luokista User, Gift ja MakeWishes. Sovelluksen toim
 
 
 
+## Tietojen pysyväistallennus
+
+Pakkauksen noora.giftwish.dao luokat vastaavata tietojen pysyväistallennuksesta.
 
 
 
+## Päätoiminnallisuudet
 
-
-
-<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/suhteita kuvaava luokkakaavio.jpg">
+### Käyttäjän kirjautuminen
+### Uuden käyttäjän luominen
+### Toiveiden luominen/hallinnointi
 
 <img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/sekvenssikaavio.jpg">
 
