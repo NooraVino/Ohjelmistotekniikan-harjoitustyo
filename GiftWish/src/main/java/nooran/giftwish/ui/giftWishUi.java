@@ -41,7 +41,7 @@ public class giftWishUi extends Application {
 
     private Scene newUserScene;
     private Scene loginScene;
-    private Scene GiftScene;
+    private Scene giftScene;
     private Scene CommentScene;
     private VBox GiftNodes;
 
@@ -111,7 +111,7 @@ public class giftWishUi extends Application {
             if (makeWishes.login(username)) {
                 loginMessage.setText("");
                 redrawGiftlist();
-                primaryStage.setScene(GiftScene);
+                primaryStage.setScene(giftScene);
                 usernameInput.setText("");
             } else {
                 loginMessage.setText("use does not exist");
@@ -202,7 +202,7 @@ public class giftWishUi extends Application {
         // pääsivu
         ScrollPane giftScollbar = new ScrollPane();
         BorderPane mainPane = new BorderPane(giftScollbar);
-        GiftScene = new Scene(mainPane, 300, 250);
+        giftScene = new Scene(mainPane, 300, 250);
 
         HBox menuPane = new HBox(10);
         Region menuSpacer = new Region();
