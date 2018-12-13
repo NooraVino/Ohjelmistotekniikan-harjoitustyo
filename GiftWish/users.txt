@@ -12,3 +12,11 @@ Meeri;sala
 Elvi;Elvi
 Elvi2;Elvi
 Äijä;Äijä
+Heikki;salasana
+Heikkinen;hepo
+Boooo;Haloo
+Paula;Rautoja
+Liisa;Virtanen
+Nea1;Metsänranta
+Inka;Kunnala
+Liisa1;Kurki
