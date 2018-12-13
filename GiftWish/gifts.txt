@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1;lahja;kassi;true;Noora
 2;lahja;lahja;true;Ville
 3;lahja;;true;Noora
@@ -15,3 +16,7 @@
 15;;;false;Noora
 16;;;false;Noora
 17;;;false;Noora
+=======
+1;mitä;kaikkea;false;Noora
+2;koira;ja kissa;false;Miia
+>>>>>>> d02e2a00bf3fc4912d85363eba7396e44f438a6d

@@ -5,7 +5,11 @@
  */
 package nooran.giftwish.ui;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Properties;
 import javafx.application.Application;
@@ -52,15 +56,39 @@ public class giftWishUi extends Application {
     @Override
     public void init() throws Exception {
         Properties properties = new Properties();
-
+        OutputStream output = null;
+        InputStream input = null;
+        
+        output = new FileOutputStream("config.properties");
+        //properties.store(output, null);
         properties.load(new FileInputStream("config.properties"));
+        
+       
+        if (properties.getProperty("userFile") == null) {
+          properties.setProperty("userFile", "users.txt"); 
+       
+        }
+        if (properties.getProperty("giftFile") == null ) {
+         properties.setProperty("giftFile", "gifts.txt");   
+    
+    }
+        properties.store(output, null);
+       
+        
+        
+       
+   
+        
+             
+        //input = new FileInputStream("config.properties");
 
-        String userFile = properties.getProperty("userFile");
+        
         String giftFile = properties.getProperty("giftFile");
+        String userFile = properties.getProperty("userFile");
 
-        FileUserDao userDao = new FileUserDao(userFile);
-        FileGiftDao giftDao = new FileGiftDao(giftFile, userDao);
-        makeWishes = new MakeWishes(userDao, giftDao);
+       FileUserDao userDao = new FileUserDao(userFile); 
+       FileGiftDao giftDao = new FileGiftDao(giftFile, userDao);
+       makeWishes = new MakeWishes(userDao, giftDao);
     }
 
     public Node createGiftNode(Gift gift) {

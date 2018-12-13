@@ -1,5 +1,5 @@
-jbdljb;swdbw
 Noora;Noora
+<<<<<<< HEAD
 cvsd;sfsf
 scs;sdas
 skdnasld;ökhda
@@ -20,3 +20,7 @@ Liisa;Virtanen
 Nea1;Metsänranta
 Inka;Kunnala
 Liisa1;Kurki
+=======
+Pia ;Kankaanpää
+Miia;Patovirta
+>>>>>>> d02e2a00bf3fc4912d85363eba7396e44f438a6d
