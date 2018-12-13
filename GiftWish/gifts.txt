@@ -1,9 +1,2 @@
-1;lahja;kassi;true;Noora
-2;lahja;lahja;true;Ville
-3;lahja;;false;Noora
-4;jaahas;jaa;true;Meeri
-5;moi;moi;false;Elvi
-6;aasi ;aasi;false;Ville
-7;kirahvi;kirahsvi;false;Ville
-8;kengät;ruskeat ja nahkaiset;false;Noora
-9;tuulipuku;nro 52;true;Äijä
+1;mitä;kaikkea;false;Noora
+2;koira;ja kissa;false;Miia
