@@ -45,8 +45,9 @@ public class giftWishUi extends Application {
 
     private Scene newUserScene;
     private Scene loginScene;
-    private Scene GiftScene;
-    private Scene CommentScene;
+    private Scene mainScene;
+    private Scene giftScene;
+    //private Scene CommentScene;
     private VBox GiftNodes;
 
     private MakeWishes makeWishes;
@@ -109,7 +110,8 @@ public class giftWishUi extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        // sisäänkirjautumissivu
+        // loginScene
+        
         BorderPane asettelu = new BorderPane();
         asettelu.setPadding(new Insets(10, 10, 10, 10));
         GridPane ruudukko = new GridPane();
@@ -128,8 +130,9 @@ public class giftWishUi extends Application {
             if (makeWishes.login(username)) {
                 loginMessage.setText("");
                 redrawGiftlist();
-                primaryStage.setScene(GiftScene);
+                primaryStage.setScene(mainScene);
                 usernameInput.setText("");
+                passwordInput.setText("");
             } else {
                 loginMessage.setText("use does not exist");
                 loginMessage.setTextFill(Color.RED);
@@ -157,7 +160,9 @@ public class giftWishUi extends Application {
 
         loginScene = new Scene(asettelu, 300, 250);
 
-        // luo uusi käyttäjä-sivu
+        
+        // new userScene
+        
         VBox newUserPane = new VBox(10);
 
         HBox newUsernamePane = new HBox(10);
@@ -187,11 +192,13 @@ public class giftWishUi extends Application {
                 userCreationMessage.setText("Käyttäjätunnus tai salasana liian lyhyitä");
                 userCreationMessage.setTextFill(Color.RED);
             } else if (makeWishes.createUser(username, password)) {
-                userCreationMessage.setText("");
-                loginMessage.setText("Uusi käyttäjä luotu käyttäjänimellä:  " + username);
-                loginMessage.setTextFill(Color.GREEN);
-                primaryStage.setScene(loginScene);
-
+                menuLabel.setText(username + " logged in...");
+                makeWishes.login(username);
+                loginMessage.setText("");
+                redrawGiftlist();
+                primaryStage.setScene(mainScene);
+                usernameInput.setText("");
+                primaryStage.setScene(mainScene);
             } else {
                 userCreationMessage.setText("username has to be unique");
                 userCreationMessage.setTextFill(Color.RED);
@@ -203,23 +210,52 @@ public class giftWishUi extends Application {
 
         newUserScene = new Scene(newUserPane, 300, 250);
 
-        primaryStage.setTitle("Make A Wish!");
-        primaryStage.setScene(loginScene);
-        primaryStage.show();
-        primaryStage.setOnCloseRequest(e -> {
-            System.out.println("closing");
-            System.out.println(makeWishes.getLoggedUser());
-            menuLabel.setText("Kirjaudu ulos ennen kuin suljet sovelluksen");
-            if (makeWishes.getLoggedUser() != null) {
-                e.consume();
-            }
-
+        // giftScene
+        
+        BorderPane location = new BorderPane();
+        location.setPadding(new Insets(10, 10, 10, 10));
+        GridPane order = new GridPane();
+        
+        GiftNodes = new VBox(10);
+        GiftNodes.setMaxWidth(280);
+        GiftNodes.setMinWidth(280);
+        redrawGiftlist();
+        
+        
+        //order.add(GiftNodes, 0, 0);
+        //location.setCenter(order);
+        
+        
+        
+        
+        
+        HBox menuPane1 = new HBox(10);
+        Region menuSpacer1 = new Region();
+        HBox.setHgrow(menuSpacer1, Priority.ALWAYS);
+        Button logoutButton1 = new Button("logout");
+        Button createGiftButton = new Button("luo uusi");
+        menuPane1.getChildren().addAll(menuLabel, menuSpacer1, logoutButton1, createGiftButton);
+        
+        BorderPane giftPane = new BorderPane();
+       
+        giftPane.getChildren().addAll(menuPane1);
+        giftScene = new Scene(GiftNodes, 300, 250);
+        
+        createGiftButton.setOnAction(e -> {
+            
+            
+            //makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
+//            newGiftInput.setText("");
+//            newContentInput.setText("");
+//            redrawGiftlist();
         });
-
-        // pääsivu
+        
+        
+        //mainScene
+        
         ScrollPane giftScollbar = new ScrollPane();
         BorderPane mainPane = new BorderPane(giftScollbar);
-        GiftScene = new Scene(mainPane, 300, 250);
+        mainScene = new Scene(mainPane, 300, 250);
 
         HBox menuPane = new HBox(10);
         Region menuSpacer = new Region();
@@ -232,12 +268,12 @@ public class giftWishUi extends Application {
         });
 
         HBox createForm = new HBox(10);
-        Button createTodo = new Button("create");
+        Button createNewGiftButton = new Button("create");
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         TextField newGiftInput = new TextField();
         TextField newContentInput = new TextField();
-        createForm.getChildren().addAll(newGiftInput, newContentInput, spacer, createTodo);
+        createForm.getChildren().addAll(newGiftInput, newContentInput, spacer, createNewGiftButton);
 
         GiftNodes = new VBox(10);
         GiftNodes.setMaxWidth(280);
@@ -248,54 +284,35 @@ public class giftWishUi extends Application {
         mainPane.setBottom(createForm);
         mainPane.setTop(menuPane);
 
-        createTodo.setOnAction(e -> {
-            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
-            newGiftInput.setText("");
-            newContentInput.setText("");
-            redrawGiftlist();
+        createNewGiftButton.setOnAction(e -> {
+            primaryStage.setScene(giftScene);
+            
+//            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
+//            newGiftInput.setText("");
+//            newContentInput.setText("");
+//            redrawGiftlist();
+        });
+        
+        /**
+         * setup primaryStage
+         */
+        
+        primaryStage.setTitle("Make A Wish!");
+        primaryStage.setScene(loginScene);
+        primaryStage.show();
+        primaryStage.setOnCloseRequest(e -> {
+            System.out.println("closing");
+            System.out.println(makeWishes.getLoggedUser());
+            menuLabel.setText("Kirjaudu ulos ennen kuin suljet sovelluksen");
+            if (makeWishes.getLoggedUser() != null) {
+                e.consume();
+            }
+
         });
     }
+    
+    
 
-    // kommentoinitsivu
-    ScrollPane GiftScollbar = new ScrollPane();
-    BorderPane commentPane = new BorderPane(GiftScollbar);
-    // CommentScene = new Scene(commentPane, 300, 250);
-
-//        HBox menuPane = new HBox(10);    
-//        Region menuSpacer = new Region();
-//        HBox.setHgrow(menuSpacer, Priority.ALWAYS);
-//        Button logoutButton = new Button("logout");      
-//        menuPane.getChildren().addAll(menuLabel, menuSpacer, logoutButton);
-//        logoutButton.setOnAction(e->{
-//            makeWishes.logout();
-//            primaryStage.setScene(loginScene);
-//        });        
-//        
-//        HBox createForm = new HBox(10);    
-//        Button createTodo = new Button("create");
-//        Region spacer = new Region();
-//        HBox.setHgrow(spacer, Priority.ALWAYS);
-//        TextField newGiftInput = new TextField();
-//        TextField newContentInput = new TextField();
-//        createForm.getChildren().addAll(newGiftInput, newContentInput, spacer, createTodo);
-//        
-//        GiftNodes = new VBox(10);
-//        GiftNodes.setMaxWidth(280);
-//        GiftNodes.setMinWidth(280);
-//        redrawGiftlist();
-//        
-//        todoScollbar.setContent(GiftNodes);
-//        mainPane.setBottom(createForm);
-//        mainPane.setTop(menuPane);
-//        
-//        createTodo.setOnAction(e->{
-//            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
-//            newGiftInput.setText(""); 
-//            newContentInput.setText("");
-//           redrawGiftlist();
-//        });
-//    
-// 
     @Override
     public void stop() {
         // tee lopetustoimenpiteet täällä
