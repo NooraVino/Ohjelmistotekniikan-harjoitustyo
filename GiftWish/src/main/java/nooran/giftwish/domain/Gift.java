@@ -38,6 +38,9 @@ public class Gift {
     public String getContent() {
         return this.content;
     }
+     public void setContent(String content) {
+        this.content = content;
+    }
 
     public User getUser() {
         return this.user;
@@ -58,10 +61,10 @@ public class Gift {
     public String getName() {
         return this.name;
     }
-
-    public String getContent(String content) {
-        return this.content;
+     public void setName(String name) {
+        this.name = name;
     }
+   
 
     @Override
     public boolean equals(Object obj) {

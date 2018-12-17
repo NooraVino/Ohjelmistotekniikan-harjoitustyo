@@ -40,6 +40,20 @@ public class MakeWishes {
         return true;
 
     }
+    /**
+     * Muokkaa lahjatoivetta
+     * 
+     * @param id  lahjatoiveen tunniste
+     * @param name lahjatoiveen nimi
+     * @param content lahjatoiveen sisältö
+     */
+    public void remakeWish(int id, String name, String content) {
+        Gift gift = new Gift(name, content, loggedIn);
+        try {
+            giftdao.remake(id, name, content);
+        } catch (Exception ex) {
+        } 
+    }
 
     /**
      * Poistaa lahjatoiveen
@@ -71,6 +85,8 @@ public class MakeWishes {
                 .filter(t -> !t.isDone())
                 .collect(Collectors.toList());
     }
+    
+ 
 
     /**
      * sisäänkirjautumisesta huolehtiva metodi
@@ -94,6 +110,10 @@ public class MakeWishes {
     public void logout() {
         loggedIn = null;
     }
+    /**
+     * 
+     * @return  palautaa kirjautuneena olevan käyttäjän.
+     */
 
     public User getLoggedUser() {
         return loggedIn;

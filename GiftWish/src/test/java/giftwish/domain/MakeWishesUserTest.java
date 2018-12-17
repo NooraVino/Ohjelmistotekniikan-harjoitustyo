@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
  * @author vino
  *
  */
-public class MakeWishUserTest {
+public class MakeWishesUserTest {
     FakeGiftDao giftDao;
     FakeUserDao userDao;
     MakeWishes makeWish;
@@ -54,15 +54,15 @@ public class MakeWishUserTest {
         assertFalse(result);
     }
 
-//    @Test
-//    public void succesfullyCreatedUserCanLogIn() throws Exception {
-//        boolean result = makeWish.createUser("Noora", "salasana");
-//        assertTrue(result);
-//
-//        boolean loginOk = makeWish.login("Noora");
-//        assertTrue(loginOk);
-//
-//        User loggedIn = makeWish.getLoggedUser();
-//        assertEquals("Noora", loggedIn.getUserName());
-//    }
+    @Test
+    public void succesfullyCreatedUserCanLogIn() throws Exception {
+        boolean result = makeWish.createUser("testaaja", "salasana");
+        assertTrue(result);
+
+        boolean loginOk = makeWish.login("testaaja");
+        assertTrue(loginOk);
+
+        User loggedIn = makeWish.getLoggedUser();
+        assertEquals("testaaja", loggedIn.getUserName());
+    }
 }

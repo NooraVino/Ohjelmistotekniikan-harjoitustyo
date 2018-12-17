@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-1;lahja;kassi;true;Noora
-2;lahja;lahja;true;Ville
-3;lahja;;true;Noora
-4;jaahas;jaa;true;Meeri
-5;moi;moi;false;Elvi
-6;aasi ;aasi;false;Ville
-7;kirahvi;kirahsvi;false;Ville
-8;kengät;ruskeat ja nahkaiset;true;Noora
-9;tuulipuku;nro 52;true;Äijä
-10;lajhka;sdnd;false;Heikkinen
-11;erf;erw;false;Heikkinen
-12;kahvia;kahvia;false;Noora
-13;leipää;leipää;false;Noora
-14;nean;kaksoset;true;Nea1
-15;;;false;Noora
-16;;;false;Noora
-17;;;false;Noora
-=======
-1;mitä;kaikkea;false;Noora
-2;koira;ja kissa;false;Miia
->>>>>>> d02e2a00bf3fc4912d85363eba7396e44f438a6d
+1;;;true;Noora
+2;;;true;Noora
+3;;;true;Noora
+4;;;true;Noora
+5;;;true;Noora
+6;;;true;Noora
+7;koira;koira;true;Noora
+8;koira;koira;true;Noora
+9;kissa;marsu;true;Herkko
+10;haku;maku;true;Noora
+11;jaahas;töttöröö;true;Noora
+12;kukuu;kaakkaa;false;Noora
+13;mita1;ihmetta1;false;Noora
+14;mita;TAAS;false;Herkko
+15;kuk2;Ihmetta1;true;Noora

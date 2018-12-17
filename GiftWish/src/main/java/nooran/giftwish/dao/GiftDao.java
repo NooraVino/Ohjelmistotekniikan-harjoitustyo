@@ -18,6 +18,10 @@ public interface GiftDao {
     List<Gift> getAll();
 
     void setDone(int id) throws Exception;
+    
+    void remake(int id, String name, String content) throws Exception;
+    
+   
 
     
 }

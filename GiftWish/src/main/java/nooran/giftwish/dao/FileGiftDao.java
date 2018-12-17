@@ -1,4 +1,3 @@
-
 package nooran.giftwish.dao;
 
 import java.io.File;
@@ -14,6 +13,7 @@ import nooran.giftwish.domain.User;
  * @author vino
  */
 public class FileGiftDao implements GiftDao {
+
     private List<Gift> gifts;
     private String file;
 
@@ -40,7 +40,7 @@ public class FileGiftDao implements GiftDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Gift gift : gifts) {
-                writer.write(gift.getId() + ";" + gift.getName() + ";"+ gift.getContent() + ";" + gift.isDone() + ";" + gift.getUser().getUserName() + "\n");
+                writer.write(gift.getId() + ";" + gift.getName() + ";" + gift.getContent() + ";" + gift.isDone() + ";" + gift.getUser().getUserName() + "\n");
             }
         }
     }
@@ -67,6 +67,17 @@ public class FileGiftDao implements GiftDao {
         for (Gift g : gifts) {
             if (g.getId() == id) {
                 g.setDone();
+            }
+        }
+        save();
+    }
+
+    @Override
+    public void remake(int id, String name, String content) throws Exception {
+        for (Gift g : gifts) {
+            if (g.getId() == id) {
+                g.setName(name);
+                g.setContent(content);
             }
         }
         save();

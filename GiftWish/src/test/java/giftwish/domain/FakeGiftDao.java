@@ -1,4 +1,3 @@
-
 package giftwish.domain;
 
 import java.util.ArrayList;
@@ -36,6 +35,17 @@ public class FakeGiftDao implements GiftDao {
             if (g.getId() == id) {
                 g.setDone();
             }
+        }
+    }
+
+    @Override
+    public void remake(int id, String name, String content) throws Exception {
+        for (Gift g : gifts) {
+            if (g.getId() == id) {
+                g.setName(name);
+                g.setContent(content);
+            }
+
         }
     }
 

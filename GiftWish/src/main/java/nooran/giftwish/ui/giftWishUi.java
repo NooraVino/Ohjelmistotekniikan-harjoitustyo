@@ -47,11 +47,15 @@ public class giftWishUi extends Application {
     private Scene loginScene;
     private Scene mainScene;
     private Scene giftScene;
-    //private Scene CommentScene;
     private VBox GiftNodes;
+    
 
     private MakeWishes makeWishes;
+    private int id;
+  
     private Label menuLabel = new Label();
+    private TextField giftNameInput = new TextField();
+    private TextField contentInput = new TextField();
 
     @Override
     public void init() throws Exception {
@@ -80,32 +84,51 @@ public class giftWishUi extends Application {
         makeWishes = new MakeWishes(userDao, giftDao);
     }
 
-    public Node createGiftNode(Gift gift) {
+    public Node createGiftNode(Gift gift, Stage primaryStage) {
         HBox box = new HBox(10);
         Label label = new Label(gift.getContent());
         label.setMinHeight(28);
-        Button button = new Button("done");
+        Button button = new Button("poista");
+        Button remakeButton = new Button("muokkaa");
         button.setOnAction(e -> {
             makeWishes.markDone(gift.getId());
-            redrawGiftlist();
+            redrawGiftlist(primaryStage);
         });
-
+        
+        remakeButton.setOnAction(e -> {
+            id = gift.getId();
+            giftNameInput.setText(gift.getName());
+            contentInput.setText(gift.getContent());
+          
+            primaryStage.setScene(giftScene);
+          
+        });
+        
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
         box.setPadding(new Insets(0, 5, 0, 5));
 
-        box.getChildren().addAll(label, spacer, button);
+        box.getChildren().addAll(label, spacer, button, remakeButton);
         return box;
     }
 
-    public void redrawGiftlist() {
+    public void redrawGiftlist(Stage primaryStage) {
         GiftNodes.getChildren().clear();
 
         List<Gift> undoneGifts = makeWishes.getUndone();
         undoneGifts.forEach(gift -> {
-            GiftNodes.getChildren().add(createGiftNode(gift));
+            GiftNodes.getChildren().add(createGiftNode(gift, primaryStage));
         });
     }
+    
+//    public void getGift(Stage primaryStage) {
+//        List<Gift> undoneGifts = makeWishes.getUndone();
+//        undoneGifts.forEach(gift -> {
+//            if (gi)
+//            GiftNodes.getChildren().add(createGiftNode(gift, primaryStage));
+//        });
+//        
+//    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -129,7 +152,7 @@ public class giftWishUi extends Application {
             menuLabel.setText(username + " logged in...");
             if (makeWishes.login(username)) {
                 loginMessage.setText("");
-                redrawGiftlist();
+                redrawGiftlist(primaryStage);
                 primaryStage.setScene(mainScene);
                 usernameInput.setText("");
                 passwordInput.setText("");
@@ -195,7 +218,7 @@ public class giftWishUi extends Application {
                 menuLabel.setText(username + " logged in...");
                 makeWishes.login(username);
                 loginMessage.setText("");
-                redrawGiftlist();
+                redrawGiftlist(primaryStage);
                 primaryStage.setScene(mainScene);
                 usernameInput.setText("");
                 primaryStage.setScene(mainScene);
@@ -210,46 +233,42 @@ public class giftWishUi extends Application {
 
         newUserScene = new Scene(newUserPane, 300, 250);
 
-        // giftScene
-        
-        BorderPane location = new BorderPane();
-        location.setPadding(new Insets(10, 10, 10, 10));
-        GridPane order = new GridPane();
-        
-        GiftNodes = new VBox(10);
-        GiftNodes.setMaxWidth(280);
-        GiftNodes.setMinWidth(280);
-        redrawGiftlist();
-        
-        
-        //order.add(GiftNodes, 0, 0);
-        //location.setCenter(order);
-        
-        
-        
-        
-        
-        HBox menuPane1 = new HBox(10);
-        Region menuSpacer1 = new Region();
-        HBox.setHgrow(menuSpacer1, Priority.ALWAYS);
-        Button logoutButton1 = new Button("logout");
-        Button createGiftButton = new Button("luo uusi");
-        menuPane1.getChildren().addAll(menuLabel, menuSpacer1, logoutButton1, createGiftButton);
-        
+//        // giftScene
+        Label yla = new Label();
         BorderPane giftPane = new BorderPane();
-       
-        giftPane.getChildren().addAll(menuPane1);
-        giftScene = new Scene(GiftNodes, 300, 250);
+        giftPane.setPadding(new Insets(10, 10, 10, 10));
+         HBox centerPane = new HBox(10);
+        HBox topPane = new HBox(10);
+
         
-        createGiftButton.setOnAction(e -> {
-            
-            
-            //makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
-//            newGiftInput.setText("");
-//            newContentInput.setText("");
-//            redrawGiftlist();
+        
+        Button logoutButton2 = new Button("logout");
+        yla.setText("dad");
+        topPane.getChildren().addAll(yla, logoutButton2);
+        logoutButton2.setOnAction(e -> {
+            makeWishes.logout();
+            primaryStage.setScene(loginScene);
         });
         
+        Button saveButton = new Button("tallenna");
+        saveButton.setOnAction(e -> {
+           
+        String name = giftNameInput.getText();
+        String content = contentInput.getText();
+        
+        
+        makeWishes.remakeWish(id, name, content);
+//        gift.setContent(content);
+//        gift.setName(name);
+        });
+                
+        TextField remakeGiftNameInput = new TextField();
+        centerPane.getChildren().addAll(contentInput, giftNameInput, saveButton);
+       
+        giftPane.setLeft(topPane);
+        giftPane.setCenter(centerPane);
+        
+        giftScene = new Scene(giftPane, 300, 250);
         
         //mainScene
         
@@ -268,6 +287,7 @@ public class giftWishUi extends Application {
         });
 
         HBox createForm = new HBox(10);
+        
         Button createNewGiftButton = new Button("create");
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
@@ -278,21 +298,19 @@ public class giftWishUi extends Application {
         GiftNodes = new VBox(10);
         GiftNodes.setMaxWidth(280);
         GiftNodes.setMinWidth(280);
-        redrawGiftlist();
+        redrawGiftlist(primaryStage);
 
         giftScollbar.setContent(GiftNodes);
         mainPane.setBottom(createForm);
         mainPane.setTop(menuPane);
 
-        createNewGiftButton.setOnAction(e -> {
-            primaryStage.setScene(giftScene);
-            
-//            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
-//            newGiftInput.setText("");
-//            newContentInput.setText("");
-//            redrawGiftlist();
+        createNewGiftButton.setOnAction(e -> {  
+            makeWishes.makeNewWish(newGiftInput.getText(), newContentInput.getText());
+            newGiftInput.setText("");
+            newContentInput.setText("");
+            redrawGiftlist(primaryStage);
         });
-        
+                 
         /**
          * setup primaryStage
          */
