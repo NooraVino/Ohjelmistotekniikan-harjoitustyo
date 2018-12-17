@@ -38,7 +38,7 @@ public class Gift {
     public String getContent() {
         return this.content;
     }
-     public void setContent(String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
@@ -61,7 +61,7 @@ public class Gift {
     public String getName() {
         return this.name;
     }
-     public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
    
