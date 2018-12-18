@@ -18,7 +18,9 @@ Päivä  |Aika |Mitä tein
 13.12 | 4 | Testien tekoa.
 16.12 | 4 | Toiminnallisuuden muokkaus.
 18.12 | 5 | Dokumentin tekoa ja toiminnallisuutta
+19.12 | 2 | Viimistelyä.
+20.12 | 3 | Viimeistelyä.
 
 
 
-Summa 53
+Summa 58
