@@ -9,7 +9,15 @@
 9;kissa;marsu;true;Herkko
 10;haku;maku;true;Noora
 11;jaahas;töttöröö;true;Noora
-12;kukuu;kaakkaa;false;Noora
+12;jaahas;kudfnofj;false;Noora
 13;mita1;ihmetta1;false;Noora
 14;mita;TAAS;false;Herkko
 15;kuk2;Ihmetta1;true;Noora
+16;mita;sitä;false;Noora
+17;ka;sala;false;Noora
+18;sa;ma;false;Noora
+19;jaaha;js;false;Noora
+20;jaha2;ksms;false;Noora
+21;fetew;ggge;false;Noora
+22;22jaaha;jaaha2;false;Noora
+23;fdsffeer;grgt;false;Noora

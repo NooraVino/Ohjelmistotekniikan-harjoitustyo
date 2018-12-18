@@ -46,13 +46,16 @@ public class MakeWishes {
      * @param id  lahjatoiveen tunniste
      * @param name lahjatoiveen nimi
      * @param content lahjatoiveen sisältö
+     * @return palauttaa true kun lahjatoiveen muokkaaminen onnistuu
      */
-    public void remakeWish(int id, String name, String content) {
+    public boolean remakeWish(int id, String name, String content) {
         Gift gift = new Gift(name, content, loggedIn);
         try {
             giftdao.remake(id, name, content);
         } catch (Exception ex) {
+            return false;
         } 
+        return true;
     }
 
     /**
