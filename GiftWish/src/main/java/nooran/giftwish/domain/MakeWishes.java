@@ -89,6 +89,18 @@ public class MakeWishes {
                 .collect(Collectors.toList());
     }
     
+    public List<Gift> getUndoneOthers() {
+//        if (loggedIn == null) {
+//            return new ArrayList<>();
+//        }
+
+        return giftdao.getAll()
+                .stream()
+                .filter(t -> !t.getUser().equals(loggedIn))
+                .filter(t -> !t.isDone())
+                .collect(Collectors.toList());
+    }
+    
  
 
     /**
