@@ -46,13 +46,16 @@ public class MakeWishes {
      * @param id  lahjatoiveen tunniste
      * @param name lahjatoiveen nimi
      * @param content lahjatoiveen sisältö
+     * @return palauttaa true kun lahjatoiveen muokkaaminen onnistuu
      */
-    public void remakeWish(int id, String name, String content) {
+    public boolean remakeWish(int id, String name, String content) {
         Gift gift = new Gift(name, content, loggedIn);
         try {
             giftdao.remake(id, name, content);
         } catch (Exception ex) {
+            return false;
         } 
+        return true;
     }
 
     /**
@@ -82,6 +85,18 @@ public class MakeWishes {
         return giftdao.getAll()
                 .stream()
                 .filter(t -> t.getUser().equals(loggedIn))
+                .filter(t -> !t.isDone())
+                .collect(Collectors.toList());
+    }
+    
+    public List<Gift> getUndoneOthers() {
+//        if (loggedIn == null) {
+//            return new ArrayList<>();
+//        }
+
+        return giftdao.getAll()
+                .stream()
+                .filter(t -> !t.getUser().equals(loggedIn))
                 .filter(t -> !t.isDone())
                 .collect(Collectors.toList());
     }

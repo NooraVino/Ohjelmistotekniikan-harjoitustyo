@@ -15,5 +15,12 @@ Päivä  |Aika |Mitä tein
 9.12  | 2 | JavaFX käytön opettelu
 10.12 | 3 | JavaFX käytön opettelu
 11.12 | 3 | Arkkitetuurikuvauksen luomista.
+13.12 | 4 | Testien tekoa.
+16.12 | 4 | Toiminnallisuuden muokkaus.
+18.12 | 5 | Dokumentin tekoa ja toiminnallisuutta
+19.12 | 2 | Viimistelyä.
+20.12 | 3 | Viimeistelyä.
 
-Summa 40
+
+
+Summa 58

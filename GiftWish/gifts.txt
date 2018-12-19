@@ -9,7 +9,23 @@
 9;kissa;marsu;true;Herkko
 10;haku;maku;true;Noora
 11;jaahas;töttöröö;true;Noora
-12;kukuu;kaakkaa;false;Noora
-13;mita1;ihmetta1;false;Noora
+12;jaahas;kudfnofj;true;Noora
+13;mita1;ihmetta1;true;Noora
 14;mita;TAAS;false;Herkko
 15;kuk2;Ihmetta1;true;Noora
+16;mita;sitä;true;Noora
+17;ka;sala;true;Noora
+18;sa;ma;true;Noora
+19;jaaha;js;true;Noora
+20;jaha2;ksms;true;Noora
+21;fetew;ggge;true;Noora
+22;22jaaha;jaaha2;true;Noora
+23;fdsffeer;grgt;true;Noora
+24;Mitä;Kuuluu;true;Noora
+25;Mitä itsellesi;IHan hyväää kiitos;true;Noora
+26;;;true;Noora
+27;trktritittrt8t8yfhfdhfe8yr;tritjirtrt8ryt8ryt8re99999999999999999999999999999fuhggggggggggggggggggggggggggggggggggggggggg;true;Noora
+28;selkäreppu;iso ja sininen;false;Noora
+29;sähköhammaharja;braun;false;Noora
+30;;;true;Noora
+31;salaattiottimet;puiset;false;Noora
