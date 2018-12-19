@@ -46,6 +46,7 @@ mvn package
 generoi jar-tiedoston. 
 
 ### JavaDoc
+generoi javaDocit:
 ```
 mvn javadoc:javadoc
 ```
