@@ -19,7 +19,7 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 ## Releaset 
 
-[Loppupalautus](https://github.com/NooraVino/ot-harjoitustyo/releases)
+[Loppupalautus](https://github.com/NooraVino/ot-harjoitustyo/releases/tag/Loppupalautus)
 
 [Viikko 5](https://github.com/NooraVino/ot-harjoitustyo/releases)
 
