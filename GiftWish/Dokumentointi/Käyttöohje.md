@@ -14,6 +14,8 @@ java -jar giftwish.jar
 Aloitusnäkymästä voit joko kirjautua sisään olemassaolevilla tunnuksilla tai siirtyä luomaan uutta tunnusta. Ohjelma ilmoittaa sinulle jos käyttäjätunnus tai salasana eivät ole oikein.
 Syötettyäsi nimen ja salasanan pääset kirjautumaan sisään painamalla __kirjaudu sisään__
 
+<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/arkkitehtuuri/kirjautuminen.png" width="400">
+
 Uuden käyttäjätunnuksen pääset luomaan painamalla __luo uusi__
 
 ## Uuden käyttäjän lisääminen
