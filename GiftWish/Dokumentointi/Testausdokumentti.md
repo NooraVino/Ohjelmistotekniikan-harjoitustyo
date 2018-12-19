@@ -10,6 +10,7 @@ Tärkeimmät testit ovat integraatiotestit MakeWishesGiftTest ja MakeWishesUserT
 Myös Dao-luokkien toiminnallisuus on testattu.
 
 ## Testauskattavuus
+<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/kuvat/testikattavuus.png" width="400">
 
 
 ## Toiminnallisuudet
