@@ -27,7 +27,7 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 ### Testaus
 
-Testit suoritetaan komennolla
+Testit suoritetaan komennolla:
 ```
 mvn test
 ```
@@ -52,9 +52,9 @@ mvn javadoc:javadoc
 
 JavaDocit polusta: target/site/apidocs/index.html
 ### Checkstyle
-Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla
+Checkstyle tyylitarkistukset suoritetaan komennolla:
 
 ```
 mvn jxr:jxr checkstyle:checkstyle
 ```
-Virheilmoitukset löytyvät polusta target/site/checkstyle.html
+Virheilmoitukset löytyvät polusta: target/site/checkstyle.html
