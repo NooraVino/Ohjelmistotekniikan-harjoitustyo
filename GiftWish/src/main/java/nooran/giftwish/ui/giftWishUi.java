@@ -154,7 +154,7 @@ public class giftWishUi extends Application {
         Button loginButton = new Button("Kirjaudu sisään");
         loginButton.setOnAction(e -> {
             String username = usernameInput.getText();
-            menuLabel.setText(username + " logged in...");
+            menuLabel.setText("Kirjautunut käyttäjä:  " + username);
             if (makeWishes.login(username)) {
                 loginMessage.setText("");
                 redrawGiftlist(primaryStage);
@@ -162,7 +162,7 @@ public class giftWishUi extends Application {
                 usernameInput.setText("");
                 passwordInput.setText("");
             } else {
-                loginMessage.setText("use does not exist");
+                loginMessage.setText("Käyttäjänimellä ei löydy käyttäjää");
                 loginMessage.setTextFill(Color.RED);
             }
         });
@@ -194,31 +194,31 @@ public class giftWishUi extends Application {
         HBox newUsernamePane = new HBox(10);
         newUsernamePane.setPadding(new Insets(10));
         TextField newUsernameInput = new TextField();
-        Label newUsernameLabel = new Label("username");
+        Label newUsernameLabel = new Label("käyttäjätunnus");
         newUsernameLabel.setPrefWidth(100);
         newUsernamePane.getChildren().addAll(newUsernameLabel, newUsernameInput);
 
         HBox newNamePane = new HBox(10);
         newNamePane.setPadding(new Insets(10));
-        TextField newNameInput = new TextField();
-        Label newNameLabel = new Label("name");
-        newNameLabel.setPrefWidth(100);
-        newNamePane.getChildren().addAll(newNameLabel, newNameInput);
+        TextField newPasswordInput = new TextField();
+        Label newPasswordLabel = new Label("salasana");
+        newPasswordLabel.setPrefWidth(100);
+        newNamePane.getChildren().addAll(newPasswordLabel, newPasswordInput);
 
         Label userCreationMessage = new Label();
 
-        Button createNewUserButton = new Button("create");
+        Button createNewUserButton = new Button("Luo uusi");
         createNewUserButton.setPadding(new Insets(10));
 
         createNewUserButton.setOnAction(e -> {
             String username = newUsernameInput.getText();
-            String password = newNameInput.getText();
+            String password = newPasswordInput.getText();
 
             if (username.length() <= 3 || password.length() <= 3) {
                 userCreationMessage.setText("Käyttäjätunnus tai salasana liian lyhyitä");
                 userCreationMessage.setTextFill(Color.RED);
             } else if (makeWishes.createUser(username, password)) {
-                menuLabel.setText(username + " logged in...");
+                menuLabel.setText("Kirjautunut käyttäjä:  " + username);
                 makeWishes.login(username);
                 loginMessage.setText("");
                 redrawGiftlist(primaryStage);
@@ -226,7 +226,7 @@ public class giftWishUi extends Application {
                 usernameInput.setText("");
                 primaryStage.setScene(mainScene);
             } else {
-                userCreationMessage.setText("username has to be unique");
+                userCreationMessage.setText("Käyttäjänimi on varattu. Valitse toinen.");
                 userCreationMessage.setTextFill(Color.RED);
             }
 
@@ -276,7 +276,7 @@ public class giftWishUi extends Application {
         giftPane.setTop(topPane);
         giftPane.setCenter(centerPane);
 
-        giftScene = new Scene(giftPane, 900, 350);
+        giftScene = new Scene(giftPane, 600, 350);
 
         //mainScene
         ScrollPane giftScollbar = new ScrollPane();
@@ -287,7 +287,7 @@ public class giftWishUi extends Application {
         Region menuSpacer = new Region();
         HBox.setHgrow(menuSpacer, Priority.ALWAYS);
         Button logoutButton = new Button("kirjaudu ulos");
-        Button othersButton = new Button("muiden");
+        Button othersButton = new Button("muiden toiveet");
         menuPane.getChildren().addAll(menuLabel, menuSpacer, logoutButton, othersButton);
         logoutButton.setOnAction(e -> {
             makeWishes.logout();
@@ -361,7 +361,7 @@ public class giftWishUi extends Application {
         
         othersPane.setTop(othersTop);
         
-        othersScene = new Scene(othersPane, 500, 550);
+        othersScene = new Scene(othersPane, 300, 350);
 
 
         /**

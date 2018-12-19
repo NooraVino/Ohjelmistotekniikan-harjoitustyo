@@ -21,7 +21,11 @@
 21;fetew;ggge;true;Noora
 22;22jaaha;jaaha2;true;Noora
 23;fdsffeer;grgt;true;Noora
-24;Mitä;Kuuluu;false;Noora
-25;Mitä itsellesi;IHan hyväää kiitos;false;Noora
+24;Mitä;Kuuluu;true;Noora
+25;Mitä itsellesi;IHan hyväää kiitos;true;Noora
 26;;;true;Noora
 27;trktritittrt8t8yfhfdhfe8yr;tritjirtrt8ryt8ryt8re99999999999999999999999999999fuhggggggggggggggggggggggggggggggggggggggggg;true;Noora
+28;selkäreppu;iso ja sininen;false;Noora
+29;sähköhammaharja;braun;false;Noora
+30;;;true;Noora
+31;salaattiottimet;puiset;false;Noora
