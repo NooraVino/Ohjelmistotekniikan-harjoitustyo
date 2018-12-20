@@ -29,12 +29,12 @@ public class MakeWishesUserTest {
         userDao.create(user1);
         userDao.create(user2);
         makeWish = new MakeWishes(userDao, giftDao);
-        makeWish.login("testaaja1");
+        makeWish.login("testaaja1", "salasana");
     }
 
     @Test
     public void nonExistingUserCanLogIn() {
-        boolean result = makeWish.login("ei ole olemassa");
+        boolean result = makeWish.login("ei ole olemassa", "eikätämä");
         assertFalse(result);
 
         assertEquals(null, makeWish.getLoggedUser());
@@ -42,7 +42,7 @@ public class MakeWishesUserTest {
 
     @Test
     public void loggedInUserCanLogout() {
-        makeWish.login("testaaja2");
+        makeWish.login("testaaja2", "salasana");
         makeWish.logout();
 
         assertEquals(null, makeWish.getLoggedUser());
@@ -59,7 +59,7 @@ public class MakeWishesUserTest {
         boolean result = makeWish.createUser("testaaja", "salasana");
         assertTrue(result);
 
-        boolean loginOk = makeWish.login("testaaja");
+        boolean loginOk = makeWish.login("testaaja", "salasana");
         assertTrue(loginOk);
 
         User loggedIn = makeWish.getLoggedUser();

@@ -32,7 +32,7 @@ public class MakeWishesGiftTest {
         userDao.create(user2);
         giftDao.create(new Gift(1, "reppu", "iso ja punainen", false, new User("Noora", "")));
         makeWish = new MakeWishes(userDao, giftDao);
-        makeWish.login("Noora");
+        makeWish.login("Noora", "salasana");
     }
     @Test
     public void listEmpytIfNotLoggedIn() {
@@ -57,7 +57,7 @@ public class MakeWishesGiftTest {
     public void loggedUsersListDoesNotContainTodosOfOther() {
         addGift("hanskat", "kokoa 10");
         makeWish.logout();
-        makeWish.login("Ville");
+        makeWish.login("Ville", "password");
         
         List<Gift> gifts = makeWish.getUndone();
         assertEquals(0, gifts.size());

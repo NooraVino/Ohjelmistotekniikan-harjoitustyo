@@ -154,8 +154,9 @@ public class giftWishUi extends Application {
         Button loginButton = new Button("Kirjaudu sisään");
         loginButton.setOnAction(e -> {
             String username = usernameInput.getText();
+            String password = passwordInput.getText();
             menuLabel.setText("Kirjautunut käyttäjä:  " + username);
-            if (makeWishes.login(username)) {
+            if (makeWishes.login(username, password)) {
                 loginMessage.setText("");
                 redrawGiftlist(primaryStage);
                 primaryStage.setScene(mainScene);
@@ -172,6 +173,7 @@ public class giftWishUi extends Application {
         grid.add(passwordLabel, 0, 1);
         grid.add(passwordInput, 1, 1);
         grid.add(loginButton, 1, 2);
+       
 
         grid.setHgap(10);
         grid.setVgap(10);
@@ -185,6 +187,7 @@ public class giftWishUi extends Application {
 
         border.setCenter(grid);
         border.setBottom(createButton);
+        border.setTop(loginMessage);
 
         loginScene = new Scene(border, 300, 250);
 
@@ -198,12 +201,12 @@ public class giftWishUi extends Application {
         newUsernameLabel.setPrefWidth(100);
         newUsernamePane.getChildren().addAll(newUsernameLabel, newUsernameInput);
 
-        HBox newNamePane = new HBox(10);
-        newNamePane.setPadding(new Insets(10));
+        HBox newPasswordPane = new HBox(10);
+        newPasswordPane.setPadding(new Insets(10));
         TextField newPasswordInput = new TextField();
         Label newPasswordLabel = new Label("salasana");
         newPasswordLabel.setPrefWidth(100);
-        newNamePane.getChildren().addAll(newPasswordLabel, newPasswordInput);
+        newPasswordPane.getChildren().addAll(newPasswordLabel, newPasswordInput);
 
         Label userCreationMessage = new Label();
 
@@ -219,11 +222,13 @@ public class giftWishUi extends Application {
                 userCreationMessage.setTextFill(Color.RED);
             } else if (makeWishes.createUser(username, password)) {
                 menuLabel.setText("Kirjautunut käyttäjä:  " + username);
-                makeWishes.login(username);
+                makeWishes.login(username, password);
                 loginMessage.setText("");
                 redrawGiftlist(primaryStage);
-                primaryStage.setScene(mainScene);
                 usernameInput.setText("");
+                passwordInput.setText("");
+                newUsernameInput.setText("");
+                newPasswordInput.setText("");
                 primaryStage.setScene(mainScene);
             } else {
                 userCreationMessage.setText("Käyttäjänimi on varattu. Valitse toinen.");
@@ -232,7 +237,7 @@ public class giftWishUi extends Application {
 
         });
 
-        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newNamePane, createNewUserButton);
+        newUserPane.getChildren().addAll(userCreationMessage, newUsernamePane, newPasswordPane, createNewUserButton);
 
         newUserScene = new Scene(newUserPane, 300, 250);
 
@@ -350,14 +355,7 @@ public class giftWishUi extends Application {
         GiftNodesOthers.setMinWidth(500);
         redrawGiftlist2(primaryStage);
 
-        giftScollbar2.setContent(GiftNodesOthers);
-//        mainPane.setBottom(createForm);
-//        mainPane.setTop(menuPane);
-        
-        
-//        Button bu = new Button ("");
-//        othersMain.getChildren().addAll(bu);
-        
+        giftScollbar2.setContent(GiftNodesOthers);  
         
         othersPane.setTop(othersTop);
         
