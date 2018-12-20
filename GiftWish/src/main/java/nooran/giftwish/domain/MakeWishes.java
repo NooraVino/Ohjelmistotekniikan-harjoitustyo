@@ -40,10 +40,11 @@ public class MakeWishes {
         return true;
 
     }
+
     /**
      * Muokkaa lahjatoivetta
-     * 
-     * @param id  lahjatoiveen tunniste
+     *
+     * @param id lahjatoiveen tunniste
      * @param name lahjatoiveen nimi
      * @param content lahjatoiveen sisältö
      * @return palauttaa true kun lahjatoiveen muokkaaminen onnistuu
@@ -54,7 +55,7 @@ public class MakeWishes {
             giftdao.remake(id, name, content);
         } catch (Exception ex) {
             return false;
-        } 
+        }
         return true;
     }
 
@@ -88,7 +89,7 @@ public class MakeWishes {
                 .filter(t -> !t.isDone())
                 .collect(Collectors.toList());
     }
-    
+
     public List<Gift> getUndoneOthers() {
 //        if (loggedIn == null) {
 //            return new ArrayList<>();
@@ -100,19 +101,18 @@ public class MakeWishes {
                 .filter(t -> !t.isDone())
                 .collect(Collectors.toList());
     }
-    
- 
 
     /**
      * sisäänkirjautumisesta huolehtiva metodi
      *
      * @param username
+     * @param password
      * @return palauttaa true jos käyttäjänimellä löytyy käyttäjä
      * @see nooran.giftwish.dao.UserDao#findByUsername(String)
      */
-    public boolean login(String username) {
+    public boolean login(String username, String password) {
         User user = userdao.findByUsername(username);
-        if (user == null) {
+        if (user == null || !user.getPassword().equals(password)) {
             return false;
         }
         loggedIn = user;
@@ -125,11 +125,11 @@ public class MakeWishes {
     public void logout() {
         loggedIn = null;
     }
-    /**
-     * 
-     * @return  palautaa kirjautuneena olevan käyttäjän.
-     */
 
+    /**
+     *
+     * @return palautaa kirjautuneena olevan käyttäjän.
+     */
     public User getLoggedUser() {
         return loggedIn;
     }

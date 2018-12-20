@@ -3,3 +3,7 @@ Herkko;Virolainen
 Mikko;Kilkki
 Ville;Välimäki
 Noora2;Noora
+Kalle;Ankka
+Kalle2;Kalle2
+Kallew;Kallew
+Ville2;daavid
