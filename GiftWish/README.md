@@ -3,7 +3,7 @@
 # Ohjelmistotekniikka 2018  
 ## Harjoitustyö: GiftWish-sovellus
 
-Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahjatoiveet ja jossa kaikki voivat yhteisesti suunnitella kuka hankkii kenelle ja mitä lahjaksi. Jokainen voi kirjata omat toiveensa ja kaikki muut käyttäjät voivat kommentoida ja ideoida lahjanhankintaa yksittäisen kyseisen käyttäjännäkemättä.
+Harjoitustyönä teen sovelluksen johon voidaan koota joululahjatoiveita. Jokainen käyttäjä voi kirjata omat toiveensa, poistaa ja muokata niitä. Tarkoituksena oli, että sovelluksessa voi myös nähdä muiden toiveet ja myös kommentoida niitä, mutta tältä osin sovellus jäi keskeneräiseksi. 
 
 ## Dokumentaatio
 [Arkkitehtuuri](https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/Arkkitehtuuri.md) 
@@ -19,7 +19,7 @@ Harjoitustyönä teen sovelluksen johon voidaan koota koko lähisuvun joululahja
 
 ## Releaset 
 
-[Loppupalautus](https://github.com/NooraVino/ot-harjoitustyo/releases/tag/Loppupalautus)
+[Loppupalautus](https://github.com/NooraVino/ot-harjoitustyo/releases/tag/Loppupalautus1)
 
 [Viikko 5](https://github.com/NooraVino/ot-harjoitustyo/releases)
 
