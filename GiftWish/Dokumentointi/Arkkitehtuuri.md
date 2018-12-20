@@ -38,8 +38,8 @@ Pakkauksen noora.giftwish.dao luokat vastaavata tietojen pysyväistallennuksesta
 ## Päätoiminnallisuudet
 
 ### Käyttäjän kirjautuminen
+Kun aloitusnäkymässä kirjataan käyttäjätunnus ja salasana niille varattuihin kenttiin ja tämän jälkeen painetaan -kirjaudu sisään- painiketta tapahtuu seuravaa:
 
-<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/kuvat/toiminnallisuus.jpg" width="300" >
+<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/kuvat/toiminnallisuus.jpg" width="400" >
 
-<img src="https://github.com/NooraVino/ot-harjoitustyo/blob/master/GiftWish/Dokumentointi/kuvat/sekvenssikaavio.jpg" width="200">
 
